@@ -295,8 +295,6 @@
       display: none;
     }
   }
-
-
 }
 
 /* ----------------- Разметкdа под mobile ----------------- */
@@ -358,7 +356,7 @@
       opacity: 0.2;
     }
 
-    &--office  {
+    &--office {
       &::after {
         display: none;
       }

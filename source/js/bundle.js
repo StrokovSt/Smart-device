@@ -2865,21 +2865,21 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 (function () {
   var Inputmask = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/index.js");
 
-  var questionSectionForm = document.querySelector(".questions-section__feedback-form");
-  var questionSectionInput = document.getElementById("questions-section-user-tel");
+  var questionSectionForm = document.querySelector('.questions-section__feedback-form');
+  var questionSectionInput = document.getElementById('questions-section-user-tel');
 
-  Inputmask("+7 (999) 999 99 99").mask(questionSectionInput);
+  new Inputmask('+7 (999) 999 99 99').mask(questionSectionInput);
 
-  questionSectionForm.addEventListener("submit", function () {
+  questionSectionForm.addEventListener('submit', function () {
     questionSectionForm.reset();
   });
 
-  questionSectionInput.addEventListener("input", function () {
+  questionSectionInput.addEventListener('input', function () {
     var inputValidity = questionSectionInput.validity.patternMismatch;
     if (!inputValidity) {
-      questionSectionInput.setCustomValidity("");
+      questionSectionInput.setCustomValidity('');
     } else {
-      questionSectionInput.setCustomValidity("Введите номер телефона");
+      questionSectionInput.setCustomValidity('Введите номер телефона');
     }
   });
 
@@ -2897,9 +2897,10 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 
 "use strict";
 
+
 (function () {
-  var mainSection = document.querySelector(`main`);
-  var callButton = document.querySelector(`.page-header__button`);
+  var mainSection = document.querySelector('main');
+  var callButton = document.querySelector('.page-header__button');
   var ESC_KEY = 27;
 
   var Inputmask = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/index.js");
@@ -2950,25 +2951,25 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
   };
 
   var renderPopup = function () {
-    render(mainSection, returnPopupTemplate(), `beforeend`);
+    render(mainSection, returnPopupTemplate(), 'beforeend');
 
-    var questionPopup = document.querySelector(`.popup-call`);
-    var closeButton = questionPopup.querySelector(`.popup-call__close-button`);
+    var questionPopup = document.querySelector('.popup-call');
+    var closeButton = questionPopup.querySelector('.popup-call__close-button');
     var popupInput = document.getElementById("popup-call-user-tel");
 
     Inputmask("+7 (999) 999 99 99").mask(popupInput);
 
-    document.body.style.overflow = `hidden`;
+    document.body.style.overflow = 'hidden';
     deletePopup(questionPopup, closeButton);
   }
 
   var deletePopup = function (popup, closeButton) {
     var onPopupClose = function () {
       popup.remove();
-      document.body.style.overflow = `auto`;
-      document.removeEventListener(`keydown`, onPopupEscPress);
-      document.removeEventListener(`click`, onPopupClose);
-      mainSection.classList.remove(`page-main--faded`);
+      document.body.style.overflow = 'auto';
+      document.removeEventListener('keydown', onPopupEscPress);
+      document.removeEventListener('click', onPopupClose);
+      mainSection.classList.remove('page-main--faded');
     };
 
     const onPopupEscPress = function (evt) {
@@ -2977,19 +2978,19 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
       }
     };
 
-    closeButton.addEventListener(`click`, onPopupClose);
-    document.addEventListener(`keydown`, onPopupEscPress);
+    closeButton.addEventListener('click', onPopupClose);
+    document.addEventListener('keydown', onPopupEscPress);
   };
 
   var onCallButtonClick = (evt) => {
     evt.preventDefault();
-    var popup = document.querySelector(`.result-popup`);
+    var popup = document.querySelector('.result-popup');
     if (!popup) {
       renderPopup();
     }
   };
 
-  callButton.addEventListener(`click`, onCallButtonClick);
+  callButton.addEventListener('click', onCallButtonClick);
 
 })();
 

@@ -1,8 +1,8 @@
 "use strict";
 
 (function () {
-  var mainSection = document.querySelector(`main`);
-  var callButton = document.querySelector(`.page-header__button`);
+  var mainSection = document.querySelector('main');
+  var callButton = document.querySelector('.page-header__button');
   var ESC_KEY = 27;
 
   var Inputmask = require('inputmask');
@@ -53,25 +53,25 @@
   };
 
   var renderPopup = function () {
-    render(mainSection, returnPopupTemplate(), `beforeend`);
+    render(mainSection, returnPopupTemplate(), 'beforeend');
 
-    var questionPopup = document.querySelector(`.popup-call`);
-    var closeButton = questionPopup.querySelector(`.popup-call__close-button`);
+    var questionPopup = document.querySelector('.popup-call');
+    var closeButton = questionPopup.querySelector('.popup-call__close-button');
     var popupInput = document.getElementById("popup-call-user-tel");
 
     Inputmask("+7 (999) 999 99 99").mask(popupInput);
 
-    document.body.style.overflow = `hidden`;
+    document.body.style.overflow = 'hidden';
     deletePopup(questionPopup, closeButton);
   }
 
   var deletePopup = function (popup, closeButton) {
     var onPopupClose = function () {
       popup.remove();
-      document.body.style.overflow = `auto`;
-      document.removeEventListener(`keydown`, onPopupEscPress);
-      document.removeEventListener(`click`, onPopupClose);
-      mainSection.classList.remove(`page-main--faded`);
+      document.body.style.overflow = 'auto';
+      document.removeEventListener('keydown', onPopupEscPress);
+      document.removeEventListener('click', onPopupClose);
+      mainSection.classList.remove('page-main--faded');
     };
 
     const onPopupEscPress = function (evt) {
@@ -80,18 +80,18 @@
       }
     };
 
-    closeButton.addEventListener(`click`, onPopupClose);
-    document.addEventListener(`keydown`, onPopupEscPress);
+    closeButton.addEventListener('click', onPopupClose);
+    document.addEventListener('keydown', onPopupEscPress);
   };
 
   var onCallButtonClick = (evt) => {
     evt.preventDefault();
-    var popup = document.querySelector(`.result-popup`);
+    var popup = document.querySelector('.result-popup');
     if (!popup) {
       renderPopup();
     }
   };
 
-  callButton.addEventListener(`click`, onCallButtonClick);
+  callButton.addEventListener('click', onCallButtonClick);
 
 })();
