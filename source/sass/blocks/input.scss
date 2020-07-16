@@ -1,0 +1,62 @@
+/* ----------------- Разметкdа под desktop ----------------- */
+
+.input {
+  width: 270px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: none;
+  font-weight: 500;
+  border: 2px solid transparent;
+  outline: none;
+  transition: 0.2s ease all;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+
+  &:hover,
+  &:focus {
+    border: 2px solid #ffffff;
+  }
+
+  &::-webkit-input-placeholder {
+    color: #ffffff;
+  }
+
+  &:valid {
+    border-color: green;
+  }
+
+  &:invalid:not(:placeholder-shown) {
+    border-color: red;
+  }
+
+  &:invalid:not(:placeholder-shown) + .input-error {
+    opacity: 1;
+  }
+
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+}
+
+/* ----------------- Разметкdа под tablet ----------------- */
+
+@media (max-width: $desktop-width) {
+  .input {
+    width: 280px;
+    height: 52px;
+  }
+}
+
+/* ----------------- Разметкdа под mobile ----------------- */
+
+@media (max-width: $tablet-width) {
+  .input {
+    width: 100%;
+  }
+}

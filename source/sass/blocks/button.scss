@@ -1,0 +1,37 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  margin: 0;
+  padding: 0;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+
+  outline: none;
+  cursor: pointer;
+  transition: 0.25s ease all;
+
+  &:hover,
+  &:focus {
+    background-color: $blue-light-color;
+    border: 1px solid $blue-light-color;
+  }
+
+  &:active {
+  }
+
+  &--colored {
+    background-color: $blue-light-color;
+  }
+}

@@ -1,0 +1,134 @@
+/* ----------------- Разметкdа под desktop ----------------- */
+
+.description-section__container {
+  position: relative;
+
+  padding-left: 182px;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    left: -29px;
+    top: 5px;
+
+    display: block;
+    width: 220px;
+    height: 317px;
+
+    background-image: url("../img/description-section-year.png");
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+  }
+}
+
+.description-section__container > h2 {
+  margin: 0;
+  margin-bottom: 21px;
+  padding: 0;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 36px;
+  line-height: 51px;
+  font-weight: normal;
+  color: $black-light-color;
+}
+
+.description-section__container > p {
+  max-width: 980px;
+  margin: 0;
+  margin-bottom: 21px;
+  padding: 0;
+
+  font-size: 16px;
+  line-height: 22px;
+  color: $black-light-color;
+}
+
+.description-section__link {
+  max-width: 180px;
+  margin-top: 38px;
+
+  border-color: $blue-light-color;
+  color: $blue-light-color;
+
+  &:focus,
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+/* ----------------- Разметкdа под tablet ----------------- */
+
+@media (max-width: $desktop-width) {
+  .description-section__container {
+    padding-left: 189px;
+
+    &::after {
+      position: absolute;
+      left: -33px;
+      top: 2px;
+
+      width: 251px;
+      height: 361px;
+
+      background-size: cover;
+    }
+  }
+
+  .description-section__container > h2 {
+    margin: 0;
+    margin-bottom: 21px;
+    padding: 0;
+
+    font-size: 32px;
+    line-height: 51px;
+  }
+
+  .description-section__container > p {
+    max-height: 90px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .description-section__link {
+    margin-top: 40px;
+  }
+}
+
+/* ----------------- Разметкdа под mobile ----------------- */
+
+@media (max-width: $tablet-width) {
+  .description-section__container {
+    padding-left: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .description-section__container > h2 {
+    margin-bottom: 14px;
+
+    font-size: 28px;
+  }
+
+  .description-section__container .description-section__description {
+    max-height: 180px;
+    margin-bottom: 41px;
+    padding-left: 3px;
+
+    overflow: hidden;
+
+    &--last {
+      margin: 0;
+    }
+  }
+
+  .description-section__link {
+    margin-top: 24px;
+    margin-left: 4px;
+  }
+}

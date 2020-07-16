@@ -1,0 +1,440 @@
+/* ----------------- Разметкdа под desktop ----------------- */
+
+.page-footer {
+  position: relative;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: 52px;
+    left: 0;
+    right: 0;
+
+    display: block;
+    height: 1px;
+
+    background-color: #626962;
+    opacity: 0.2;
+  }
+}
+
+.page-footer__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 35px;
+}
+
+.page-footer__social-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 95px;
+  margin-top: 30px;
+}
+
+.page-footer__logo {
+  margin-bottom: 45px;
+}
+
+.page-footer__social-description {
+  display: none;
+}
+
+.page-footer__social-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.page-footer__social-item {
+  margin-right: 15px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.page-footer__social-link {
+  outline: none;
+
+  &:hover > .page-footer___svg,
+  &:focus > .page-footer___svg {
+    fill: $blue-light-color;
+  }
+
+  &:active > .page-footer___svg {
+    opacity: 0.7;
+  }
+}
+
+.page-footer___svg {
+  width: 27px;
+  height: 27px;
+
+  transition: 0.2s ease all;
+  outline: none;
+  fill: #cdcdcd;
+}
+
+.page-footer__information-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-top: 30px;
+}
+
+.page-footer__information-container {
+  margin-right: 150px;
+
+  &--office {
+    margin-right: 0;
+  }
+
+  &--office .page-footer__information-item {
+    margin-right: 0;
+  }
+}
+
+.page-footer__information-container > h3 {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #1b2d37;
+}
+
+.page-footer__information-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 100px;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+// Колонка page-footer__information-list почему-то криво отображется.
+// Перенесённые flex-wrap li как-будто становятся absolute объектами и не засчитываются в длину ul
+
+.page-footer__information-item {
+  display: block;
+  margin-right: 75px;
+}
+
+.page-footer__information-link {
+  margin: 0;
+  padding: 0;
+
+  font-size: 15px;
+  line-height: 25px;
+  color: #1b2d37;
+
+  transition: 0.2s ease all;
+  outline: none;
+  opacity: 0.5;
+
+  &:hover,
+  &:focus {
+    color: $blue-light-color;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.page-footer__copyright-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 59px;
+}
+
+.page-footer__copyright-span {
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1b2d37;
+
+  opacity: 0.5;
+
+  &--rights {
+    margin-right: 73px;
+  }
+
+  &--devises {
+    margin-right: 143px;
+  }
+
+  &--confidentiality {
+    margin-right: auto;
+  }
+}
+
+/* ----------------- Разметкdа под tablet ----------------- */
+
+@media (max-width: $desktop-width) {
+  .page-footer {
+    overflow-x: hidden;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .page-footer__container {
+    padding-top: 19px;
+  }
+
+  .page-footer__social-section {
+    position: relative;
+
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding-bottom: 18px;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: 0;
+      left: -100vw;
+      right: -100vw;
+
+      display: block;
+      height: 1px;
+
+      background-color: #626962;
+      opacity: 0.2;
+    }
+  }
+
+  .page-footer__logo {
+    margin: 0;
+    margin-right: 15px;
+  }
+
+  .page-footer__social-description {
+    display: block;
+
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #1b2d37;
+    opacity: 0.5;
+  }
+
+  .page-footer__social-list {
+    width: auto;
+  }
+
+  .page-footer__information-section {
+    position: relative;
+
+    margin-top: 39px;
+    padding-bottom: 37px;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: 0;
+      left: -100vw;
+      right: -100vw;
+
+      display: block;
+      height: 1px;
+
+      background-color: #626962;
+      opacity: 0.2;
+    }
+  }
+
+  .page-footer__information-container {
+    margin: 0;
+
+    &--office {
+      margin-right: 10px;
+    }
+  }
+
+  .page-footer__information-list {
+    display: block;
+    max-height: inherit;
+  }
+
+  .page-footer__copyright-section {
+    margin-top: 7px;
+  }
+
+  .page-footer__copyright-span {
+    &--rights {
+      display: none;
+    }
+
+    &--devises {
+      display: none;
+    }
+  }
+
+
+}
+
+/* ----------------- Разметкdа под mobile ----------------- */
+
+@media (max-width: $tablet-width) {
+  .page-footer__social-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 27px;
+    padding-bottom: 47px;
+  }
+
+  .page-footer__logo {
+    margin-bottom: 19px;
+    margin-left: 15px;
+  }
+
+  .page-footer__social-description {
+    display: block;
+    width: 100%;
+    margin-bottom: 32px;
+
+    text-align: center;
+  }
+
+  .page-footer__social-list {
+    justify-content: center;
+  }
+
+  .page-footer__information-section {
+    margin-top: 0;
+    padding-bottom: 0;
+
+    &::after {
+      bottom: -5px;
+    }
+  }
+
+  .page-footer__information-container {
+    position: relative;
+
+    width: 100%;
+    margin: 0;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: 5px;
+      left: -100vw;
+      right: -100vw;
+
+      display: block;
+      height: 1px;
+
+      background-color: #626962;
+      opacity: 0.2;
+    }
+
+    &--office  {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .page-footer__information-container > h3 {
+    position: relative;
+
+    display: block;
+    width: 100%;
+    margin-bottom: 35px;
+    padding-top: 26px;
+
+    cursor: pointer;
+
+    &::after {
+      content: "+";
+
+      position: absolute;
+      top: 23px;
+      right: 3px;
+
+      display: block;
+      width: 18px;
+      height: 18px;
+
+      font-family: "PT Mono", "Arial", sans-serif;
+      font-size: 22px;
+      line-height: 22px;
+      font-weight: normal;
+      text-align: center;
+
+      color: #c4c4c4;
+      outline: none;
+      transition: 0.2s ease all;
+    }
+
+    &:hover {
+      &::after {
+        color: $blue-light-color;
+      }
+    }
+
+    &:active {
+      &::after {
+        opacity: 0.7;
+        text-shadow: 0 0 10px $blue-light-color;
+      }
+    }
+  }
+
+  .page-footer__information-list {
+    display: none;
+    max-width: 275px;
+    padding-bottom: 20px;
+
+    &--open {
+      display: flex;
+    }
+  }
+
+  .page-footer__copyright-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 33px;
+  }
+
+  .page-footer__copyright-span {
+    width: 100%;
+    margin-bottom: 21px;
+
+    text-align: center;
+  }
+}

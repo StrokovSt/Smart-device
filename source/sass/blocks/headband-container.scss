@@ -1,0 +1,36 @@
+/* ----------------- Разметкdа под desktop ----------------- */
+
+.headband-container {
+  padding-top: 32px;
+  padding-bottom: 143px;
+  background-color: $black-color;
+
+  background-image: url("../img/desktop-header-background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* ----------------- Разметкdа под tablet ----------------- */
+
+@media (max-width: $desktop-width) {
+  .headband-container {
+    padding-top: 20px;
+    padding-bottom: 162px;
+
+    background-image: url("../img/tablet-header-background.png");
+  }
+}
+
+/* ----------------- Разметкdа под mobile ----------------- */
+
+@media (max-width: $tablet-width) {
+  .headband-container {
+    padding-top: 18px;
+    padding-bottom: 70px;
+
+    background-image: url("../img/mobile-header-background.png");
+    background-size: auto;
+    background-position: 55.5% 100%;
+  }
+}
