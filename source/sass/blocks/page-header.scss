@@ -46,20 +46,27 @@
   line-height: 18px;
   color: #ffffff;
 
+  transition: 0.2s ease all;
+
   &:hover,
   &:focus {
     color: $blue-light-color;
   }
+
+  &:active {
+    opacity: 0.7;
+  }
 }
 
 .page-header__link:hover > .page-header__link-img {
-  fill: #4640f5;
+  fill: #ffffff;
 }
 
 .page-header__link-img {
   margin-right: 9px;
 
   fill: $blue-light-color;
+  transition: 0.2s ease all;
 }
 
 .page-header__button {

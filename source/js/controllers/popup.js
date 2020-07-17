@@ -23,8 +23,6 @@
     userData = getUserData();
   }
 
-  console.log(userData);
-
   var renderPopup = function () {
     var questionPopup = document.querySelector('.popup-call');
     var closeButton = questionPopup.querySelector('.popup-call__close-button');
@@ -49,19 +47,13 @@
       var popupPhoneInput = document.getElementById("popup-call-user-tel");
       var popupQuestionInput = document.getElementById("popup-call-user-question");
 
-      console.log(popupNameInput.value);
-      console.log(popupPhoneInput.value);
-      console.log(popupQuestionInput.value);
-
       userData = {
         userName: popupNameInput.value,
         userNumber: popupPhoneInput.value,
         userMessage: popupQuestionInput.value
       }
 
-      console.log(userData);
       setUserData(userData);
-
       popup.classList.remove('popup-call--active');
       document.body.style.overflow = 'auto';
       document.removeEventListener('keydown', onPopupEscPress);

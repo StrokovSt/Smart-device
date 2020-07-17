@@ -9,6 +9,10 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  &--webp {
+    background-image: url("../img/desktop-header-background.webp");
+  }
 }
 
 /* ----------------- Разметкdа под tablet ----------------- */
@@ -19,6 +23,10 @@
     padding-bottom: 162px;
 
     background-image: url("../img/tablet-header-background.png");
+
+    &--webp {
+      background-image: url("../img/tablet-header-background.webp");
+    }
   }
 }
 
@@ -32,5 +40,9 @@
     background-image: url("../img/mobile-header-background.png");
     background-size: auto;
     background-position: 55.5% 100%;
+
+    &--webp {
+      background-image: url("../img/mobile-header-background.webp");
+    }
   }
 }
