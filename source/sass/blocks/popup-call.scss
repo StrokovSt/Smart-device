@@ -1,7 +1,11 @@
 /* ----------------- Разметкdа под desktop ----------------- */
 
 .popup-call {
+  display: none;
 
+  &--active {
+    display: block;
+  }
 }
 
 .popup-call__container {
