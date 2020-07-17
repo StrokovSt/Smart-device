@@ -1,15 +1,29 @@
-"use strict";
+'use strict';
 
 (function () {
   var mainSection = document.querySelector('main');
   var callButton = document.querySelector('.page-header__button');
   var ESC_KEY = 27;
-
   var Inputmask = require('inputmask');
 
   var render = function (container, template, place) {
     container.insertAdjacentHTML(place, template);
   };
+
+  var setUserData = function (obj) {
+    localStorage.setItem('cart', JSON.stringify(obj));
+  };
+
+  var getUserData = function () {
+    return JSON.parse(localStorage.getItem('cart'));
+  };
+
+  var userData = {};
+  if (getUserData() !== null) {
+    userData = getUserData();
+  }
+
+  console.log(userData);
 
   var returnPopupTemplate = function () {
     return (
@@ -25,7 +39,7 @@
               <ul class="popup-call__list">
                 <li class="popup-call__item">
                   <label class="visually-hidden" for="popup-call-user-name">Ваше имя:</label>
-                  <input class="popup-call__input input" type="text" name="popup-call-user-name" id="popup-call-user-name" placeholder="Имя"
+                  <input autofocus class="popup-call__input input" type="text" name="popup-call-user-name" id="popup-call-user-name" placeholder="Имя"
                   pattern="^[А-Яа-яЁё\s]+$" required>
                   <span class="popup-call__input-error input-error">Введите имя русскими буквами</span>
                 </li>
@@ -57,9 +71,16 @@
 
     var questionPopup = document.querySelector('.popup-call');
     var closeButton = questionPopup.querySelector('.popup-call__close-button');
-    var popupInput = document.getElementById("popup-call-user-tel");
+    var submitButton = questionPopup.querySelector('.popup-call__button');
+    var popupNameInput = document.getElementById("popup-call-user-name");
+    var popupPhoneInput = document.getElementById("popup-call-user-tel");
+    var popupQuestionInput = document.getElementById("popup-call-user-question");
 
-    Inputmask("+7 (999) 999 99 99").mask(popupInput);
+    popupNameInput.value = userData.userName;
+    popupPhoneInput.value = userData.userNumber;
+    popupQuestionInput.value = userData.userMessage;
+
+    Inputmask("+7 (999) 999 99 99").mask(popupPhoneInput);
 
     document.body.style.overflow = 'hidden';
     deletePopup(questionPopup, closeButton);
@@ -67,11 +88,28 @@
 
   var deletePopup = function (popup, closeButton) {
     var onPopupClose = function () {
+      var popupNameInput = document.getElementById("popup-call-user-name");
+      var popupPhoneInput = document.getElementById("popup-call-user-tel");
+      var popupQuestionInput = document.getElementById("popup-call-user-question");
+
+      console.log(popupNameInput.value);
+      console.log(popupPhoneInput.value);
+      console.log(popupQuestionInput.value);
+
+      userData = {
+        userName: popupNameInput.value,
+        userNumber: popupPhoneInput.value,
+        userMessage: popupQuestionInput.value
+      }
+
+      console.log(userData);
+
+      setUserData(userData);
+
       popup.remove();
       document.body.style.overflow = 'auto';
       document.removeEventListener('keydown', onPopupEscPress);
       document.removeEventListener('click', onPopupClose);
-      mainSection.classList.remove('page-main--faded');
     };
 
     const onPopupEscPress = function (evt) {
@@ -86,10 +124,14 @@
 
   var onCallButtonClick = (evt) => {
     evt.preventDefault();
-    var popup = document.querySelector('.result-popup');
+    var popup = document.querySelector('.popup-call');
     if (!popup) {
       renderPopup();
     }
+  };
+
+  var onSubmitButtonClick = (evt) => {
+    evt.preventDefault();
   };
 
   callButton.addEventListener('click', onCallButtonClick);

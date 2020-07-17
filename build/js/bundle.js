@@ -2852,6 +2852,39 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 
 /***/ }),
 
+/***/ "./source/js/controllers/information-controller.js":
+/*!*********************************************************!*\
+  !*** ./source/js/controllers/information-controller.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+(function () {
+  var informationSection = document.querySelector('.page-footer__information-section');
+  var informationList = document.querySelectorAll('.page-footer__information-list');
+  var informationListHeading = document.querySelectorAll('.page-footer__information-heading');
+
+  for (var i = 0; i < informationList.length; i++) {
+    informationListHeading[i].classList.remove('page-footer__information-heading--open');
+  }
+
+  informationSection.addEventListener('click', function (evt) {
+    if (evt.target.tagName === 'H3') {
+      if (evt.target.classList.contains('page-footer__information-heading--open')) {
+        evt.target.classList.remove('page-footer__information-heading--open');
+      } else {
+        evt.target.classList.add('page-footer__information-heading--open');
+      }
+    }
+  });
+})();
+
+
+/***/ }),
+
 /***/ "./source/js/controllers/input-controller.js":
 /*!***************************************************!*\
   !*** ./source/js/controllers/input-controller.js ***!
@@ -2902,12 +2935,26 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
   var mainSection = document.querySelector('main');
   var callButton = document.querySelector('.page-header__button');
   var ESC_KEY = 27;
-
   var Inputmask = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/index.js");
 
   var render = function (container, template, place) {
     container.insertAdjacentHTML(place, template);
   };
+
+  var setUserData = function (obj) {
+    localStorage.setItem('cart', JSON.stringify(obj));
+  };
+
+  var getUserData = function () {
+    return JSON.parse(localStorage.getItem('cart'));
+  };
+
+  var userData = {};
+  if (getUserData() !== null) {
+    userData = getUserData();
+  }
+
+  console.log(userData);
 
   var returnPopupTemplate = function () {
     return (
@@ -2923,7 +2970,7 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
               <ul class="popup-call__list">
                 <li class="popup-call__item">
                   <label class="visually-hidden" for="popup-call-user-name">Ваше имя:</label>
-                  <input class="popup-call__input input" type="text" name="popup-call-user-name" id="popup-call-user-name" placeholder="Имя"
+                  <input autofocus class="popup-call__input input" type="text" name="popup-call-user-name" id="popup-call-user-name" placeholder="Имя"
                   pattern="^[А-Яа-яЁё\s]+$" required>
                   <span class="popup-call__input-error input-error">Введите имя русскими буквами</span>
                 </li>
@@ -2955,9 +3002,16 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 
     var questionPopup = document.querySelector('.popup-call');
     var closeButton = questionPopup.querySelector('.popup-call__close-button');
-    var popupInput = document.getElementById("popup-call-user-tel");
+    var submitButton = questionPopup.querySelector('.popup-call__button');
+    var popupNameInput = document.getElementById("popup-call-user-name");
+    var popupPhoneInput = document.getElementById("popup-call-user-tel");
+    var popupQuestionInput = document.getElementById("popup-call-user-question");
 
-    Inputmask("+7 (999) 999 99 99").mask(popupInput);
+    popupNameInput.value = userData.userName;
+    popupPhoneInput.value = userData.userNumber;
+    popupQuestionInput.value = userData.userMessage;
+
+    Inputmask("+7 (999) 999 99 99").mask(popupPhoneInput);
 
     document.body.style.overflow = 'hidden';
     deletePopup(questionPopup, closeButton);
@@ -2965,11 +3019,28 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 
   var deletePopup = function (popup, closeButton) {
     var onPopupClose = function () {
+      var popupNameInput = document.getElementById("popup-call-user-name");
+      var popupPhoneInput = document.getElementById("popup-call-user-tel");
+      var popupQuestionInput = document.getElementById("popup-call-user-question");
+
+      console.log(popupNameInput.value);
+      console.log(popupPhoneInput.value);
+      console.log(popupQuestionInput.value);
+
+      userData = {
+        userName: popupNameInput.value,
+        userNumber: popupPhoneInput.value,
+        userMessage: popupQuestionInput.value
+      }
+
+      console.log(userData);
+
+      setUserData(userData);
+
       popup.remove();
       document.body.style.overflow = 'auto';
       document.removeEventListener('keydown', onPopupEscPress);
       document.removeEventListener('click', onPopupClose);
-      mainSection.classList.remove('page-main--faded');
     };
 
     const onPopupEscPress = function (evt) {
@@ -2984,10 +3055,14 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 
   var onCallButtonClick = (evt) => {
     evt.preventDefault();
-    var popup = document.querySelector('.result-popup');
+    var popup = document.querySelector('.popup-call');
     if (!popup) {
       renderPopup();
     }
+  };
+
+  var onSubmitButtonClick = (evt) => {
+    evt.preventDefault();
   };
 
   callButton.addEventListener('click', onCallButtonClick);
@@ -3007,8 +3082,9 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 "use strict";
 
 
-var popup = __webpack_require__(/*! ./controllers/popup.js */ "./source/js/controllers/popup.js");
 var inputController = __webpack_require__(/*! ./controllers/input-controller.js */ "./source/js/controllers/input-controller.js");
+var inforamationController = __webpack_require__(/*! ./controllers/information-controller.js */ "./source/js/controllers/information-controller.js");
+var popupController = __webpack_require__(/*! ./controllers/popup.js */ "./source/js/controllers/popup.js");
 
 
 /***/ })

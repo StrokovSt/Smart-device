@@ -1,4 +1,5 @@
-"use strict";
+'use strict';
 
-var popup = require('./controllers/popup.js');
 var inputController = require('./controllers/input-controller.js');
+var inforamationController = require('./controllers/information-controller.js');
+var popupController = require('./controllers/popup.js');

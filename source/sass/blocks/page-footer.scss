@@ -101,7 +101,7 @@
   }
 }
 
-.page-footer__information-container > h3 {
+.page-footer__information-heading {
   margin: 0;
   margin-bottom: 25px;
   padding: 0;
@@ -363,7 +363,7 @@
     }
   }
 
-  .page-footer__information-container > h3 {
+  .page-footer__information-heading {
     position: relative;
 
     display: block;
@@ -407,16 +407,22 @@
         text-shadow: 0 0 10px $blue-light-color;
       }
     }
+
+    &--open {
+      &::after {
+        content: "-";
+      }
+    }
+
+    &--open + .page-footer__information-list {
+      display: flex;
+    }
   }
 
   .page-footer__information-list {
     display: none;
     max-width: 275px;
     padding-bottom: 20px;
-
-    &--open {
-      display: flex;
-    }
   }
 
   .page-footer__copyright-section {
