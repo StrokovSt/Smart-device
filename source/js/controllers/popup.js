@@ -18,7 +18,11 @@
     return JSON.parse(localStorage.getItem('cart'));
   };
 
-  var userData = {};
+  var userData = {
+    userName: "",
+    userNumber: "",
+    userMessage: ""
+  };
   if (getUserData() !== null) {
     userData = getUserData();
   }

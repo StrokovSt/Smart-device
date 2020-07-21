@@ -1,6 +1,7 @@
 "use strict";
 
 var gulp = require("gulp");
+var webp = require("gulp-webp");
 var plumber = require("gulp-plumber");
 var sourcemap = require("gulp-sourcemaps");
 var sass = require("gulp-sass");
@@ -10,11 +11,16 @@ var server = require("browser-sync").create();
 var csso = require("gulp-csso");
 var rename = require("gulp-rename");
 var imagemin = require("gulp-imagemin");
-var webp = require("gulp-webp");
 var svgstore = require("gulp-svgstore")
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
+
+gulp.task("pure-css", function () {
+  return gulp.src("source/sass/style.scss")
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest("build/css"));
+});
 
 gulp.task("css", function () {
   return gulp.src("source/sass/style.scss")
@@ -97,5 +103,5 @@ gulp.task("clean", function () {
   return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "copy", "webp", "css", "sprite", "html"));
+gulp.task("build", gulp.series("clean", "copy", "webp", "css", "pure-css", "sprite", "html"));
 gulp.task("start", gulp.series("build", "server"));

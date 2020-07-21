@@ -83,7 +83,6 @@
   position: absolute;
   left: 75px;
 
-  display: inline-block;
   margin: 0;
   padding: 0;
 
@@ -186,7 +185,7 @@
 
   .headline-section__anchor-span {
     &--short {
-      display: inline-block;
+      display: block;
     }
 
     &--detail {

@@ -19,11 +19,12 @@
         <li class="page-header__item page-header__item--logo">
           <a class="page-header__logo" role="banner">
             <picture>
-              <!-- <source type="image/webp" media="(min-width: 768px)" srcset="img/desktop-logo.webp"> -->
-              <source media="(min-width: 768px)" srcset="img/desktop-logo.png">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/desktop-logo.webp 1x, img/desktop-logo(x2).webp 2x">
+              <source type="image/webp" srcset="img/mobile-logo.webp 1x, img/mobile-logo(x2).webp 2x">
 
-              <!-- <source type="image/webp" srcset="img/desktop-logo.webp"> -->
-              <img class="page-header__logo-image" src="img/mobile-logo.png"  width="38" height="38" alt="Логотип: Smart-Device">
+              <source media="(min-width: 768px)" srcset="img/desktop-logo.png 1x, img/desktop-logo(x2).png 2x">
+              <!-- 1х: 38px; 2x: 76px -->
+              <img class="page-header__logo-image" src="img/mobile-logo.png" srcset="img/mobile-logo(x2).png 2x" width="38" height="38" alt="Логотип: Smart-Device">
             </picture>
           </a>
         </li>
@@ -111,11 +112,11 @@
       <section class="page-main__description-section description-section container container--reduced">
         <div class="description-section__container">
           <h2 class="description-section__heading">О компании</h2>
-          <p class="description-section__description">
+          <p>
             Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года.
             Выполняем срочные заказы и пилотные образцы до 10 дней.
           </p>
-          <p class="description-section__description description-section__description--last">
+          <p>
             Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
             Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
             РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники.
@@ -130,18 +131,18 @@
       <section class="page-main__services-section services-section container container--reduced">
         <h2 class="services-section__heading">Service Device предлагает следующие товары и услуги</h2>
         <ul class="services-section__list">
-          <li class="services-section__item services-section__item--production">
-            <a class="services-section__link" href="#">
+          <li class="services-section__item">
+            <a class="services-section__link services-section__link--production" href="#">
               <span class="services-section__link-description">Производство печатных плат</span>
             </a>
           </li>
-          <li class="services-section__item services-section__item--mounting">
-            <a class="services-section__link" href="#">
+          <li class="services-section__item">
+            <a class="services-section__link services-section__link--mounting"  href="#">
               <span class="services-section__link-description">Монтаж печатных плат</span>
             </a>
           </li>
-          <li class="services-section__item services-section__item--components">
-            <a class="services-section__link" href="#">
+          <li class="services-section__item">
+            <a class="services-section__link services-section__link--components" href="#">
               <span class="services-section__link-description">Комплектующие для светотехники</span>
             </a>
           </li>
@@ -228,7 +229,12 @@
       <section class="page-footer__social-section">
         <h2 class="visually-hidden">Социальные сети</h2>
         <a class="page-footer__logo" role="banner">
-          <img class="page-footer__logo-image" src="img/desktop-footer-logo.png"  width="216" height="52" alt="Логотип: Smart-Device">
+          <picture>
+            <source type="image/webp" srcset="img/desktop-footer-logo(x2).webp 1x, img/desktop-footer-logo(x2).webp 2x">
+
+            <!-- 1х: 216px; 2x: 432px -->
+            <img class="page-footer__logo-image" src="img/desktop-footer-logo.png" srcset="img/desktop-footer-logo(x2).png 2x"  width="216" height="52" alt="Логотип: Smart-Device">
+          </picture>
         </a>
         <span class="page-footer__social-description">1999-2018 SD Service Devices</span>
         <ul class="page-footer__social-list">

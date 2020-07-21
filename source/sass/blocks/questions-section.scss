@@ -3,7 +3,7 @@
 .questions-section {
   padding: 0 84px;
   padding-top: 91px;
-  padding-bottom: 110px;
+  padding-bottom: 114px;
 }
 
 .questions-section__container {
@@ -34,7 +34,7 @@
   color: #ffffff;
 }
 
-.questions-section__feedback-form {
+.questions-section__container > form {
   position: relative;
 
   display: flex;
@@ -94,7 +94,7 @@
 .questions-section__item > textarea {
   width: 100%;
   max-width: 600px;
-  padding: 13px 16px;
+  padding: 11px 16px;
 
   font-family: "PT Mono", "Arial", sans-serif;
   font-size: 16px;
@@ -104,7 +104,7 @@
 
   border: 2px solid transparent;
   outline: none;
-  transition: 0.2s ease all;
+  transition: 0.25s ease all;
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   resize: none;
@@ -160,6 +160,7 @@
   &--consent {
     position: relative;
 
+    display: block;
     max-width: 265px;
     padding-left: 34px;
     padding-top: 8px;

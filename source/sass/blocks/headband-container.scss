@@ -10,8 +10,8 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  &--webp {
-    background-image: url("../img/desktop-header-background.webp");
+  @media (min-resolution: $retina-dppx) {
+    background-image: url("../img/desktop-header-background(x2).png");
   }
 }
 
@@ -24,8 +24,8 @@
 
     background-image: url("../img/tablet-header-background.png");
 
-    &--webp {
-      background-image: url("../img/tablet-header-background.webp");
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/tablet-header-background(x2).png");
     }
   }
 }
@@ -41,8 +41,10 @@
     background-size: auto;
     background-position: 55.5% 100%;
 
-    &--webp {
-      background-image: url("../img/mobile-header-background.webp");
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/mobile-header-background(x2).png");
+      background-size: 450%;
+      background-position: 55.5% 100%;
     }
   }
 }

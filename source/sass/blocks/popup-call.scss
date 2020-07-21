@@ -89,7 +89,7 @@
   color: #ffffff;
 }
 
-.popup-call__feedback-form {
+.popup-call__container > form {
   position: relative;
 
   display: flex;
@@ -165,7 +165,7 @@
 
   border: 2px solid transparent;
   outline: none;
-  transition: 0.2s ease all;
+  transition: 0.25s ease all;
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
 

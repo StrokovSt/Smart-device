@@ -8,6 +8,10 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media (min-resolution: $retina-dppx) {
+    background-image: url("../img/desktop-headline-background(x2).png");
+  }
 }
 
 .page-main__advantages-section {
@@ -26,6 +30,11 @@
   background-position: 50% 44%;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media (min-resolution: $retina-dppx) {
+    background-image: url("../img/desktop-form-airplane(x2).png");
+    background-position: 50% 63%;
+  }
 }
 
 /* ----------------- Разметкdа под tablet ----------------- */
@@ -39,6 +48,10 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/desktop-headline-background(x2).png");
+    }
   }
 
   .page-main__advantages-section {
