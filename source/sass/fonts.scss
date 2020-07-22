@@ -6,7 +6,7 @@
   font-weight: 300;
   src: local("Roboto Condensed Light"),
     local("RobotoCondensed-Light"),
-    url("../fonts/RobotoCondensed-Regular.woff") format("woff");
+    url("../fonts/roboto-condensed-v18-regular.woff") format("woff");
 }
 
 /* roboto-condensed-300italic - latin */
@@ -29,7 +29,7 @@
   font-weight: 400;
   src: local("Roboto Condensed"),
     local("RobotoCondensed-Regular"),
-    url("../fonts/RobotoCondensed-Regular.woff") format("woff");
+    url("../fonts/roboto-condensed-v18-regular.woff") format("woff");
 }
 
 /* roboto-condensed-italic - latin */
@@ -52,7 +52,7 @@
   font-weight: 700;
   src: local("Roboto Condensed Bold Italic"),
     local("RobotoCondensed-BoldItalic"),
-    url("../fonts/RobotoCondensed-BoldItalic.woff") format("woff");
+    url("../fonts/roboto-condensed-v18-bold-italick.woff") format("woff");
 }
 
 /* roboto-condensed-700 - latin */
@@ -63,7 +63,7 @@
   font-weight: 700;
   src: local("Roboto Condensed Bold"),
     local("RobotoCondensed-Bold"),
-    url("../fonts/RobotoCondensed-Bold.woff") format("woff");
+    url("../fonts/roboto-condensed-v18-bold.woff") format("woff");
 }
 
 /* pt-mono-regular - latin_cyrillic-ext_cyrillic */
@@ -74,6 +74,6 @@
   font-weight: 400;
   src: local("PT Mono"),
     local("PTMono-Regular"),
-    url("../fonts/pt-mono-v7-latin_cyrillic-ext_cyrillic-regular.woff2") format("woff2"),
-    url("../fonts/pt-mono-v7-latin_cyrillic-ext_cyrillic-regular.woff") format("woff");
+    url("../fonts/pt-mono-v7-latin-regular.woff2") format("woff2"),
+    url("../fonts/pt-mono-v7-latin-regular.woff") format("woff");
 }

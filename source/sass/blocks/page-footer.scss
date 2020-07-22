@@ -3,6 +3,8 @@
 .page-footer {
   position: relative;
 
+  flex: 0 0 auto;
+
   &::after {
     content: "";
 
@@ -368,8 +370,8 @@
 
     display: block;
     width: 100%;
-    margin-bottom: 35px;
-    padding-top: 26px;
+    margin-bottom: 33px;
+    padding-top: 27px;
 
     cursor: pointer;
 
@@ -410,7 +412,7 @@
 
     &--open {
       &::after {
-        content: "-";
+        content: "—";
       }
     }
 

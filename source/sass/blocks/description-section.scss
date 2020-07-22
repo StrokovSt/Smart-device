@@ -26,6 +26,16 @@
       background-size: contain;
     }
   }
+
+  &--webp {
+    &::after {
+      background-image: url("../img/description-section-year.webp");
+
+      @media (min-resolution: $retina-dppx) {
+        background-image: url("../img/description-section-year(x2).webp");
+      }
+    }
+  }
 }
 
 .description-section__container > h2 {

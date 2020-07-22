@@ -12,6 +12,14 @@
   @media (min-resolution: $retina-dppx) {
     background-image: url("../img/desktop-headline-background(x2).png");
   }
+
+  &--webp {
+    background-image: url("../img/desktop-headline-background.webp");
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/desktop-headline-background(x2).webp");
+    }
+  }
 }
 
 .page-main__advantages-section {
@@ -35,6 +43,14 @@
     background-image: url("../img/desktop-form-airplane(x2).png");
     background-position: 50% 63%;
   }
+
+  &--webp {
+    background-image: url("../img/desktop-form-airplane.webp");
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/desktop-form-airplane(x2).webp");
+    }
+  }
 }
 
 /* ----------------- Разметкdа под tablet ----------------- */
@@ -51,6 +67,14 @@
 
     @media (min-resolution: $retina-dppx) {
       background-image: url("../img/desktop-headline-background(x2).png");
+    }
+
+    &--webp {
+      background-image: url("../img/desktop-headline-background.webp");
+
+      @media (min-resolution: $retina-dppx) {
+        background-image: url("../img/desktop-headline-background(x2).webp");
+      }
     }
   }
 

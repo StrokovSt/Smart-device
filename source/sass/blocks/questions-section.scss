@@ -152,6 +152,10 @@
       background-repeat: no-repeat;
     }
   }
+
+  &:focus ~ .questions-section__label::after {
+    box-shadow: 0 0 5px blue;
+  }
 }
 
 .questions-section__label {
@@ -182,6 +186,10 @@
       height: 16px;
 
       border: 1px solid #ffffff;
+    }
+
+    &:hover::after {
+      box-shadow: 0 0 5px blue;
     }
   }
 }

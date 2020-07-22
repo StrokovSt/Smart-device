@@ -2949,7 +2949,11 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
     return JSON.parse(localStorage.getItem('cart'));
   };
 
-  var userData = {};
+  var userData = {
+    userName: "",
+    userNumber: "",
+    userMessage: ""
+  };
   if (getUserData() !== null) {
     userData = getUserData();
   }
@@ -3021,6 +3025,44 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 
 /***/ }),
 
+/***/ "./source/js/controllers/webp-checker.js":
+/*!***********************************************!*\
+  !*** ./source/js/controllers/webp-checker.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+(function() {
+  var canUseWebp = function () {
+    var elem = document.createElement('canvas');
+    if (!!(elem.getContext && elem.getContext('2d'))) {
+      return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+    }
+    else {
+      return false;
+    }
+  };
+
+  var useWebp = function () {
+    if (canUseWebp()) {
+      var images = document.querySelectorAll('[data-bg]');
+      for (var i = 0; i < images.length; i++) {
+        var webpClass = images[i].classList[0] + '--webp';
+        images[i].classList.add(webpClass);
+      }
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', useWebp);
+
+})();
+
+
+/***/ }),
+
 /***/ "./source/js/main.js":
 /*!***************************!*\
   !*** ./source/js/main.js ***!
@@ -3034,6 +3076,7 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 var inputController = __webpack_require__(/*! ./controllers/input-controller.js */ "./source/js/controllers/input-controller.js");
 var inforamationController = __webpack_require__(/*! ./controllers/information-controller.js */ "./source/js/controllers/information-controller.js");
 var popupController = __webpack_require__(/*! ./controllers/popup.js */ "./source/js/controllers/popup.js");
+var webpChecker = __webpack_require__(/*! ./controllers/webp-checker.js */ "./source/js/controllers/webp-checker.js");
 
 
 /***/ })

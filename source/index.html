@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" CONTENT="Smart Device">
+  <link rel="preload" href="/fonts/roboto-condensed-v18-regular.woff" as="font">
+  <link rel="preload" href="/pt-mono-v7-latin-regular.woff2" as="font">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -64,7 +66,7 @@
   </div>
 
   <main class="page-main">
-    <div id="advantages-container" class="page-main__advantages-container">
+    <div id="advantages-container" class="page-main__advantages-container" data-bg="webp">
       <section class="page-main__advantages-section advantages-section container">
         <h2 class="visually-hidden">Наши приемущества</h2>
         <ul class="advantages-section__list">
@@ -110,7 +112,7 @@
       </section>
 
       <section class="page-main__description-section description-section container container--reduced">
-        <div class="description-section__container">
+        <div class="description-section__container" data-bg="webp">
           <h2 class="description-section__heading">О компании</h2>
           <p>
             Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года.
@@ -132,17 +134,17 @@
         <h2 class="services-section__heading">Service Device предлагает следующие товары и услуги</h2>
         <ul class="services-section__list">
           <li class="services-section__item">
-            <a class="services-section__link services-section__link--production" href="#">
+            <a class="services-section__link services-section__link--production" data-bg="webp" href="#">
               <span class="services-section__link-description">Производство печатных плат</span>
             </a>
           </li>
           <li class="services-section__item">
-            <a class="services-section__link services-section__link--mounting"  href="#">
+            <a class="services-section__link services-section__link--mounting" data-bg="webp" href="#">
               <span class="services-section__link-description">Монтаж печатных плат</span>
             </a>
           </li>
           <li class="services-section__item">
-            <a class="services-section__link services-section__link--components" href="#">
+            <a class="services-section__link services-section__link--components" data-bg="webp" href="#">
               <span class="services-section__link-description">Комплектующие для светотехники</span>
             </a>
           </li>
@@ -150,7 +152,7 @@
       </section>
     </div>
 
-    <div id="questions-container" class="page-main__questions-container">
+    <div id="questions-container" class="page-main__questions-container" data-bg="webp">
       <section class="page-main__questions-section questions-section container container--reduced">
         <div class="questions-section__container">
           <h2 class="questions-section__heading">Остались вопросы? Задайте их нам!</h2>
@@ -205,7 +207,7 @@
               <li class="popup-call__item">
                 <label class="visually-hidden" for="popup-call-user-tel">Ваш телефон:</label>
                 <input class="popup-call__input input" type="tel" name="popup-call-user-tel" id="popup-call-user-tel" placeholder="Телефон"
-                required>
+                pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}\s\d{2}\s\d{2}" required>
                 <span class="popup-call__input-error input-error">Введите телефон: +7 (123) 456 78 90</span>
               </li>
               <li class="popup-call__item popup-call__item--textarea">
