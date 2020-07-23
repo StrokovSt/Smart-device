@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" CONTENT="Smart Device">
   <link rel="preload" href="/fonts/roboto-condensed-v18-regular.woff" as="font">
-  <link rel="preload" href="/pt-mono-v7-latin-regular.woff2" as="font">
+  <link rel="preload" href="/fonts/pt-mono-v7-latin-regular.woff2" as="font">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -19,14 +19,14 @@
     <header class="headband-container__page-header page-header container">
       <ul class="page-header__list">
         <li class="page-header__item page-header__item--logo">
-          <a class="page-header__logo" role="banner">
+          <a class="page-header__logo" role="banner" data-bg="webp">
             <picture>
               <source type="image/webp" media="(min-width: 768px)" srcset="img/desktop-logo.webp 1x, img/desktop-logo(x2).webp 2x">
               <source type="image/webp" srcset="img/mobile-logo.webp 1x, img/mobile-logo(x2).webp 2x">
 
-              <source media="(min-width: 768px)" srcset="img/desktop-logo.png 1x, img/desktop-logo(x2).png 2x">
+              <source media="(max-width: 768px)" srcset="img/mobile-logo.png 1x, img/mobile-logo(x2).png 2x">
               <!-- 1х: 38px; 2x: 76px -->
-              <img class="page-header__logo-image" src="img/mobile-logo.png" srcset="img/mobile-logo(x2).png 2x" width="38" height="38" alt="Логотип: Smart-Device">
+              <img class="page-header__logo-image" src="img/desktop-logo.png" srcset="img/desktop-logo(x2).png 2x" width="38" height="38" alt="Логотип: Smart-Device">
             </picture>
           </a>
         </li>
@@ -271,7 +271,7 @@
         <h2 class="visually-hidden">Больше информации:</h2>
         <div class="page-footer__information-container">
           <h3 class="page-footer__information-heading page-footer__information-heading--open">Разделы сайта</h3>
-          <ul class="page-footer__information-list">
+          <ul class="page-footer__information-list page-footer__information-list--addon">
             <li class="page-footer__information-item">
               <a class="page-footer__information-link" href="#">О компании</a>
             </li>
@@ -297,7 +297,7 @@
         </div>
         <div class="page-footer__information-container page-footer__information-container--office">
           <h3 class="page-footer__information-heading page-footer__information-heading--open">Наш офис</h3>
-          <ul class="page-footer__information-list">
+          <ul class="page-footer__information-list page-footer__information-list--contacts">
             <li class="page-footer__information-item">
               <a class="page-footer__information-link" href="#">г. Мытищи, Олимпийский проспект, д.10</a>
             </li>

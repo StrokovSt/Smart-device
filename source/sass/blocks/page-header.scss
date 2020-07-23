@@ -1,7 +1,7 @@
 /* ----------------- Разметкdа под desktop ----------------- */
 
 .page-header {
-  margin-bottom: 232px;
+  margin-bottom: 212px;
 }
 
 .page-header__list {
@@ -16,6 +16,8 @@
 }
 
 .page-header__item {
+  margin-bottom: 20px;
+
   &--logo {
     margin-right: auto;
 
@@ -34,6 +36,12 @@
   &--button {
     margin-right: 2px;
   }
+}
+
+.page-header__logo {
+  display: block;
+  width: 202px;
+  height: 52px;
 }
 
 .page-header__logo-image {
@@ -82,6 +90,8 @@
   }
 
   .page-header__item {
+    margin-bottom: 0;
+
     &--logo {
       margin-right: auto;
     }
@@ -123,7 +133,30 @@
 /* ----------------- Разметкdа под mobile ----------------- */
 
 @media (max-width: $tablet-width) {
+  .page-header__logo {
+    width: 38px;
+    height: 38px;
+
+    background-image: url("../img/mobile-logo.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/mobile-logo(x2).png");
+    }
+
+    &--webp {
+      background-image: url("../img/mobile-logo.webp");
+
+      @media (min-resolution: $retina-dppx) {
+        background-image: url("../img/mobile-logo(x2).webp");
+      }
+    }
+  }
+
   .page-header__logo-image {
+    display: none;
     width: 38px;
     height: 38px;
   }

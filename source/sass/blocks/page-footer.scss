@@ -85,14 +85,12 @@
 
 .page-footer__information-section {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   flex-grow: 1;
   margin-top: 30px;
 }
 
 .page-footer__information-container {
-  margin-right: 150px;
+  margin-right: auto;
 
   &--office {
     margin-right: 0;
@@ -117,18 +115,17 @@
 }
 
 .page-footer__information-list {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   max-height: 100px;
   margin: 0;
   padding: 0;
 
   list-style: none;
-}
 
-// Колонка page-footer__information-list почему-то криво отображется.
-// Перенесённые flex-wrap li как-будто становятся absolute объектами и не засчитываются в длину ul
+  &--addon {
+    column-count: 2;
+    column-gap: 0;
+  }
+}
 
 .page-footer__information-item {
   display: block;
@@ -252,6 +249,7 @@
   .page-footer__information-section {
     position: relative;
 
+    flex-wrap: wrap;
     margin-top: 39px;
     padding-bottom: 37px;
 
@@ -272,16 +270,20 @@
   }
 
   .page-footer__information-container {
-    margin: 0;
+    margin-right: auto;
 
     &--office {
-      margin-right: 10px;
+      margin-right: 12px;
     }
   }
 
   .page-footer__information-list {
     display: block;
     max-height: inherit;
+
+    &--addon {
+      column-count: 1;
+    }
   }
 
   .page-footer__copyright-section {
@@ -423,6 +425,7 @@
 
   .page-footer__information-list {
     display: none;
+    flex-wrap: wrap;
     max-width: 275px;
     padding-bottom: 20px;
   }

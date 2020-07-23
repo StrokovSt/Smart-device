@@ -2932,14 +2932,9 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 
 
 (function () {
-  var mainSection = document.querySelector('main');
   var callButton = document.querySelector('.page-header__button');
   var ESC_KEY = 27;
   var Inputmask = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/index.js");
-
-  var render = function (container, template, place) {
-    container.insertAdjacentHTML(place, template);
-  };
 
   var setUserData = function (obj) {
     localStorage.setItem('cart', JSON.stringify(obj));
@@ -2950,9 +2945,9 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
   };
 
   var userData = {
-    userName: "",
-    userNumber: "",
-    userMessage: ""
+    userName: '',
+    userNumber: '',
+    userMessage: ''
   };
   if (getUserData() !== null) {
     userData = getUserData();
@@ -2961,38 +2956,40 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
   var renderPopup = function () {
     var questionPopup = document.querySelector('.popup-call');
     var closeButton = questionPopup.querySelector('.popup-call__close-button');
-    var submitButton = questionPopup.querySelector('.popup-call__button');
-    var popupNameInput = document.getElementById("popup-call-user-name");
-    var popupPhoneInput = document.getElementById("popup-call-user-tel");
-    var popupQuestionInput = document.getElementById("popup-call-user-question");
+    var popupNameInput = document.getElementById('popup-call-user-name');
+    var popupPhoneInput = document.getElementById('popup-call-user-tel');
+    var popupQuestionInput = document.getElementById('popup-call-user-question');
+
+    popupNameInput.focus();
 
     popupNameInput.value = userData.userName;
     popupPhoneInput.value = userData.userNumber;
     popupQuestionInput.value = userData.userMessage;
 
-    Inputmask("+7 (999) 999 99 99").mask(popupPhoneInput);
+    new Inputmask('+7 (999) 999 99 99').mask(popupPhoneInput);
 
     document.body.style.overflow = 'hidden';
     deletePopup(questionPopup, closeButton);
-  }
+  };
 
   var deletePopup = function (popup, closeButton) {
     var onPopupClose = function () {
-      var popupNameInput = document.getElementById("popup-call-user-name");
-      var popupPhoneInput = document.getElementById("popup-call-user-tel");
-      var popupQuestionInput = document.getElementById("popup-call-user-question");
+      var popupNameInput = document.getElementById('popup-call-user-name');
+      var popupPhoneInput = document.getElementById('popup-call-user-tel');
+      var popupQuestionInput = document.getElementById('popup-call-user-question');
 
       userData = {
         userName: popupNameInput.value,
         userNumber: popupPhoneInput.value,
         userMessage: popupQuestionInput.value
-      }
+      };
 
       setUserData(userData);
       popup.classList.remove('popup-call--active');
       document.body.style.overflow = 'auto';
       document.removeEventListener('keydown', onPopupEscPress);
       document.removeEventListener('click', onPopupClose);
+      document.removeEventListener('click', onOverlayClick);
     };
 
     var onPopupEscPress = function (evt) {
@@ -3001,8 +2998,16 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
       }
     };
 
+    var onOverlayClick = function (evt) {
+      var questionPopup = document.querySelector('.popup-call');
+      if (!questionPopup.contains(evt.target) && !evt.target.classList.contains('page-header__button')) {
+        onPopupClose();
+      }
+    };
+
     closeButton.addEventListener('click', onPopupClose);
     document.addEventListener('keydown', onPopupEscPress);
+    document.addEventListener('click', onOverlayClick);
   };
 
   var onCallButtonClick = function (evt) {
@@ -3014,9 +3019,6 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
     }
   };
 
-  var onSubmitButtonClick = function (evt) {
-    evt.preventDefault();
-  };
 
   callButton.addEventListener('click', onCallButtonClick);
 
@@ -3035,11 +3037,11 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 "use strict";
 
 
-(function() {
+(function () {
   var canUseWebp = function () {
     var elem = document.createElement('canvas');
     if (!!(elem.getContext && elem.getContext('2d'))) {
-      return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+      return elem.toDataURL('image/webp').indexOf('data:image/webp') === 0;
     }
     else {
       return false;

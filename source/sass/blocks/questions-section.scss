@@ -222,14 +222,14 @@
   }
 
   .questions-section__fieldset {
-    margin-bottom: 38px;
+    margin-bottom: 42px;
   }
 
   .questions-section__button {
     width: 280px;
   }
 
-  .call-popup__label {
+  .questions-section__label {
     cursor: pointer;
 
     &--consent {
@@ -289,7 +289,7 @@
     margin-bottom: 23px;
   }
 
-  .call-popup__label {
+  .questions-section__label {
     cursor: pointer;
 
     &--consent {
