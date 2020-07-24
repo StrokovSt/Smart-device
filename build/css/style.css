@@ -14,11 +14,14 @@ html {
   box-sizing: inherit; }
 
 body {
-  width: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   height: 100%;
   min-width: 320px;
   max-width: 100%;
   margin: 0 auto;
+  margin-top: auto;
   padding: 0;
   font-family: "PT Mono", "Arial", sans-serif;
   font-size: 16px;
@@ -27,6 +30,21 @@ body {
   color: #203c42;
   overflow-x: hidden;
   background-color: #ffffff; }
+
+.body-page--blocked {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll; }
+  .body-page--blocked::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1b2d37;
+    opacity: 0.9; }
 
 a {
   text-decoration: none; }
@@ -252,6 +270,10 @@ img {
     margin-right: 21px; } }
 
 /* ----------------- Разметкdа под desktop ----------------- */
+.page-main {
+  width: 100%;
+  flex: 1 0 auto; }
+
 .page-main__advantages-container {
   padding-top: 112px;
   padding-bottom: 110px;
@@ -335,7 +357,9 @@ img {
 /* ----------------- Разметкdа под desktop ----------------- */
 .page-footer {
   position: relative;
-  flex: 0 0 auto; }
+  width: 100%;
+  flex: 0 0 auto;
+  margin-top: auto; }
   .page-footer::after {
     content: "";
     position: absolute;
@@ -627,6 +651,7 @@ img {
 
 /* ----------------- Разметкdа под desktop ----------------- */
 .headband-container {
+  width: 100%;
   padding-top: 32px;
   padding-bottom: 143px;
   background-image: url("../img/desktop-header-background.png");

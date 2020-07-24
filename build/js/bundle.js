@@ -2933,6 +2933,7 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 
 (function () {
   var callButton = document.querySelector('.page-header__button');
+  var body = document.querySelector('.body-page');
   var ESC_KEY = 27;
   var Inputmask = __webpack_require__(/*! inputmask */ "./node_modules/inputmask/index.js");
 
@@ -2949,6 +2950,7 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
     userNumber: '',
     userMessage: ''
   };
+
   if (getUserData() !== null) {
     userData = getUserData();
   }
@@ -2968,7 +2970,7 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 
     new Inputmask('+7 (999) 999 99 99').mask(popupPhoneInput);
 
-    document.body.style.overflow = 'hidden';
+    body.classList.add('body-page--blocked');
     deletePopup(questionPopup, closeButton);
   };
 
@@ -2986,7 +2988,7 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
 
       setUserData(userData);
       popup.classList.remove('popup-call--active');
-      document.body.style.overflow = 'auto';
+      body.classList.remove('body-page--blocked');
       document.removeEventListener('keydown', onPopupEscPress);
       document.removeEventListener('click', onPopupClose);
       document.removeEventListener('click', onOverlayClick);

@@ -1,5 +1,10 @@
 /* ----------------- Разметкdа под desktop ----------------- */
 
+.page-main {
+  width: 100%;
+  flex: 1 0 auto;
+}
+
 .page-main__advantages-container {
   padding-top: 112px;
   padding-bottom: 110px;

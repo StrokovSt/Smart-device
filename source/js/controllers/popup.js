@@ -2,6 +2,7 @@
 
 (function () {
   var callButton = document.querySelector('.page-header__button');
+  var body = document.querySelector('.body-page');
   var ESC_KEY = 27;
   var Inputmask = require('inputmask');
 
@@ -18,6 +19,7 @@
     userNumber: '',
     userMessage: ''
   };
+
   if (getUserData() !== null) {
     userData = getUserData();
   }
@@ -37,7 +39,7 @@
 
     new Inputmask('+7 (999) 999 99 99').mask(popupPhoneInput);
 
-    document.body.style.overflow = 'hidden';
+    body.classList.add('body-page--blocked');
     deletePopup(questionPopup, closeButton);
   };
 
@@ -55,7 +57,7 @@
 
       setUserData(userData);
       popup.classList.remove('popup-call--active');
-      document.body.style.overflow = 'auto';
+      body.classList.remove('body-page--blocked');
       document.removeEventListener('keydown', onPopupEscPress);
       document.removeEventListener('click', onPopupClose);
       document.removeEventListener('click', onOverlayClick);
