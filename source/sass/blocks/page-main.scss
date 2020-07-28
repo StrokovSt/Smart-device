@@ -40,13 +40,14 @@
 .page-main__questions-container {
   background-image: url("../img/desktop-form-airplane.png");
   background-color: $blue-light-color;
-  background-position: 50% 44%;
-  background-size: cover;
+  background-position: 100% 63%;
+  background-size: auto;
   background-repeat: no-repeat;
 
   @media (min-resolution: $retina-dppx) {
     background-image: url("../img/desktop-form-airplane(x2).png");
     background-position: 50% 63%;
+    background-size: cover;
   }
 
   &--webp {

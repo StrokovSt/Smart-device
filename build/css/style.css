@@ -301,13 +301,14 @@ img {
 .page-main__questions-container {
   background-image: url("../img/desktop-form-airplane.png");
   background-color: #00b2ff;
-  background-position: 50% 44%;
-  background-size: cover;
+  background-position: 100% 63%;
+  background-size: auto;
   background-repeat: no-repeat; }
   @media (min-resolution: 1.5dppx) {
     .page-main__questions-container {
       background-image: url("../img/desktop-form-airplane(x2).png");
-      background-position: 50% 63%; } }
+      background-position: 50% 63%;
+      background-size: cover; } }
   .page-main__questions-container--webp {
     background-image: url("../img/desktop-form-airplane.webp"); }
     @media (min-resolution: 1.5dppx) {
@@ -374,7 +375,7 @@ img {
 .page-footer__container {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 6%;
+  padding: 0 5.9%;
   padding-top: 35px; }
 
 .page-footer__social-section {
