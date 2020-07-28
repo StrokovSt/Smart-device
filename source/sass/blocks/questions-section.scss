@@ -125,6 +125,7 @@
 
 .questions-section__button {
   width: 270px;
+  order: 0;
 
   background-color: rgba(255, 255, 255, 0.1);
 
@@ -159,6 +160,7 @@
 }
 
 .questions-section__label {
+  order: 1;
   cursor: pointer;
 
   &--consent {
@@ -264,6 +266,10 @@
     margin-bottom: 25px;
   }
 
+  .questions-section__container > form {
+    justify-content: center;
+  }
+
   .questions-section__fieldset {
     margin-bottom: 24px;
   }
@@ -290,6 +296,7 @@
   }
 
   .questions-section__label {
+    max-width: 320px;
     cursor: pointer;
 
     &--consent {

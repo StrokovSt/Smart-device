@@ -2876,6 +2876,9 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
       if (evt.target.classList.contains('page-footer__information-heading--open')) {
         evt.target.classList.remove('page-footer__information-heading--open');
       } else {
+        for (var j = 0; j < informationList.length; j++) {
+          informationListHeading[j].classList.remove('page-footer__information-heading--open');
+        }
         evt.target.classList.add('page-footer__information-heading--open');
       }
     }
@@ -3044,8 +3047,7 @@ module.exports = __webpack_require__(/*! ./dist/inputmask */ "./node_modules/inp
     var elem = document.createElement('canvas');
     if (!!(elem.getContext && elem.getContext('2d'))) {
       return elem.toDataURL('image/webp').indexOf('data:image/webp') === 0;
-    }
-    else {
+    } else {
       return false;
     }
   };

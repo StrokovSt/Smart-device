@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" CONTENT="Smart Device">
-  <link rel="preload" href="/fonts/roboto-condensed-v18-regular.woff" as="font">
-  <link rel="preload" href="/fonts/pt-mono-v7-latin-regular.woff2" as="font">
+  <link rel="preload" crossorigin="anonymous" href="/fonts/roboto-condensed-v18-regular.woff" as="font">
+  <link rel="preload" crossorigin="anonymous" href="/fonts/pt-mono-v7-latin-regular.woff2" as="font">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body class="body-page">
@@ -178,11 +178,11 @@
                 </li>
               </ul>
             </fieldset>
-            <button class="questions-section__button button" type="submit">Задать вопрос</button>
             <input class="questions-section__checkbox visually-hidden" type="checkbox" name="questions-section-consent" id="questions-section-consent" value="true" required>
             <label class="questions-section__label questions-section__label--consent" for="questions-section-consent">
               Я согласен на обработку  персональных данных
             </label>
+            <button class="questions-section__button button" type="submit">Задать вопрос</button>
           </form>
         </div>
       </section>
@@ -216,11 +216,11 @@
               </li>
             </ul>
           </fieldset>
-          <button class="popup-call__button button" type="submit">Задать вопрос</button>
           <input class="popup-call__checkbox visually-hidden" type="checkbox" name="popup-consent" id="popup-consent" value="true" required>
           <label class="popup-call__label popup-call__label--consent" for="popup-consent">
             Я согласен на обработку  персональных данных
           </label>
+          <button class="popup-call__button button" type="submit">Задать вопрос</button>
         </form>
       </div>
     </div>
@@ -316,10 +316,10 @@
 
       <section class="page-footer__copyright-section">
         <h2 class="visually-hidden">Copyright</h2>
-        <span class="page-footer__copyright-span page-footer__copyright-span--rights">Все права защищены</span>
-        <span class="page-footer__copyright-span page-footer__copyright-span--devises">1999-2018 SD Service Devices</span>
-        <span class="page-footer__copyright-span page-footer__copyright-span--confidentiality">Условия конфиденциальности</span>
-        <span class="page-footer__copyright-span page-footer__copyright-span--developers">Developed by wow studio </span>
+        <span class="page-footer__copyright-info page-footer__copyright-info--rights">Все права защищены</span>
+        <span class="page-footer__copyright-info page-footer__copyright-info--devises">1999-2018 SD Service Devices</span>
+        <a class="page-footer__copyright-info page-footer__copyright-info--confidentiality" href="#">Условия конфиденциальности</a>
+        <span class="page-footer__copyright-info page-footer__copyright-info--developers">Developed by wow studio </span>
       </section>
     </div>
   </footer>

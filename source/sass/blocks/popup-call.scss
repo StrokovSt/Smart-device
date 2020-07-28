@@ -136,6 +136,10 @@
 
 .popup-call__item > .popup-call__input {
   width: 100%;
+
+  &:focus::-webkit-input-placeholder {
+    color: #ffffff;
+  }
 }
 
 .popup-call__input-error {
@@ -216,10 +220,16 @@
       background-repeat: no-repeat;
     }
   }
+
+  &:focus ~ .popup-call__label::after {
+    box-shadow: 0 0 5px blue;
+  }
 }
 
 .popup-call__label {
   width: 100%;
+
+  order: 1;
   cursor: pointer;
 
   &--consent {

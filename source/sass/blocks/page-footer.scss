@@ -25,15 +25,16 @@
 
 .page-footer__container {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0 6%;
   padding-top: 35px;
 }
 
 .page-footer__social-section {
   display: flex;
   flex-wrap: wrap;
-  margin-right: 95px;
+  max-width: 30%;
+  margin-right: auto;
   margin-top: 30px;
 }
 
@@ -88,6 +89,7 @@
 .page-footer__information-section {
   display: flex;
   flex-grow: 1;
+  max-width: 70%;
   margin-top: 30px;
 }
 
@@ -117,7 +119,6 @@
 }
 
 .page-footer__information-list {
-  max-height: 100px;
   margin: 0;
   padding: 0;
 
@@ -165,7 +166,7 @@
   margin-top: 59px;
 }
 
-.page-footer__copyright-span {
+.page-footer__copyright-info {
   font-size: 13px;
   line-height: 24px;
   letter-spacing: 0.04em;
@@ -184,6 +185,18 @@
 
   &--confidentiality {
     margin-right: auto;
+
+    transition: 0.25s ease all;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      color: $blue-light-color;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
   }
 }
 
@@ -206,6 +219,7 @@
     position: relative;
 
     width: 100%;
+    max-width: 100%;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
@@ -252,6 +266,7 @@
     position: relative;
 
     flex-wrap: wrap;
+    max-width: 100%;
     margin-top: 39px;
     padding-bottom: 37px;
 
@@ -292,7 +307,7 @@
     margin-top: 7px;
   }
 
-  .page-footer__copyright-span {
+  .page-footer__copyright-info {
     &--rights {
       display: none;
     }
@@ -428,8 +443,12 @@
   .page-footer__information-list {
     display: none;
     flex-wrap: wrap;
-    max-width: 275px;
+    padding-right: 30px;
     padding-bottom: 20px;
+  }
+
+  .page-footer__information-item {
+    width: 100%;
   }
 
   .page-footer__copyright-section {
@@ -442,7 +461,7 @@
     margin-top: 33px;
   }
 
-  .page-footer__copyright-span {
+  .page-footer__copyright-info {
     width: 100%;
     margin-bottom: 21px;
 

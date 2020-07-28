@@ -14,6 +14,9 @@
       if (evt.target.classList.contains('page-footer__information-heading--open')) {
         evt.target.classList.remove('page-footer__information-heading--open');
       } else {
+        for (var j = 0; j < informationList.length; j++) {
+          informationListHeading[j].classList.remove('page-footer__information-heading--open');
+        }
         evt.target.classList.add('page-footer__information-heading--open');
       }
     }

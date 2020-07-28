@@ -373,14 +373,15 @@ img {
 
 .page-footer__container {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0 6%;
   padding-top: 35px; }
 
 .page-footer__social-section {
   display: flex;
   flex-wrap: wrap;
-  margin-right: 95px;
+  max-width: 30%;
+  margin-right: auto;
   margin-top: 30px; }
 
 .page-footer__logo {
@@ -420,6 +421,7 @@ img {
 .page-footer__information-section {
   display: flex;
   flex-grow: 1;
+  max-width: 70%;
   margin-top: 30px; }
 
 .page-footer__information-container {
@@ -441,7 +443,6 @@ img {
   color: #1b2d37; }
 
 .page-footer__information-list {
-  max-height: 100px;
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -475,19 +476,25 @@ img {
   min-height: 52px;
   margin-top: 59px; }
 
-.page-footer__copyright-span {
+.page-footer__copyright-info {
   font-size: 13px;
   line-height: 24px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #1b2d37;
   opacity: 0.5; }
-  .page-footer__copyright-span--rights {
+  .page-footer__copyright-info--rights {
     margin-right: 73px; }
-  .page-footer__copyright-span--devises {
+  .page-footer__copyright-info--devises {
     margin-right: 143px; }
-  .page-footer__copyright-span--confidentiality {
-    margin-right: auto; }
+  .page-footer__copyright-info--confidentiality {
+    margin-right: auto;
+    transition: 0.25s ease all;
+    outline: none; }
+    .page-footer__copyright-info--confidentiality:hover, .page-footer__copyright-info--confidentiality:focus {
+      color: #00b2ff; }
+    .page-footer__copyright-info--confidentiality:active {
+      opacity: 0.7; }
 
 /* ----------------- Разметкdа под tablet ----------------- */
 @media (max-width: 1023px) {
@@ -500,6 +507,7 @@ img {
   .page-footer__social-section {
     position: relative;
     width: 100%;
+    max-width: 100%;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
@@ -531,6 +539,7 @@ img {
   .page-footer__information-section {
     position: relative;
     flex-wrap: wrap;
+    max-width: 100%;
     margin-top: 39px;
     padding-bottom: 37px; }
     .page-footer__information-section::after {
@@ -554,9 +563,9 @@ img {
       column-count: 1; }
   .page-footer__copyright-section {
     margin-top: 7px; }
-  .page-footer__copyright-span--rights {
+  .page-footer__copyright-info--rights {
     display: none; }
-  .page-footer__copyright-span--devises {
+  .page-footer__copyright-info--devises {
     display: none; } }
 
 /* ----------------- Разметкdа под mobile ----------------- */
@@ -634,8 +643,10 @@ img {
   .page-footer__information-list {
     display: none;
     flex-wrap: wrap;
-    max-width: 275px;
+    padding-right: 30px;
     padding-bottom: 20px; }
+  .page-footer__information-item {
+    width: 100%; }
   .page-footer__copyright-section {
     display: flex;
     justify-content: flex-start;
@@ -644,7 +655,7 @@ img {
     width: 100%;
     min-height: 52px;
     margin-top: 33px; }
-  .page-footer__copyright-span {
+  .page-footer__copyright-info {
     width: 100%;
     margin-bottom: 21px;
     text-align: center; } }
@@ -1403,6 +1414,7 @@ img {
 
 .questions-section__button {
   width: 270px;
+  order: 0;
   background-color: rgba(255, 255, 255, 0.1); }
   .questions-section__button:hover, .questions-section__button:focus {
     border: 1px solid #ffffff;
@@ -1423,6 +1435,7 @@ img {
     box-shadow: 0 0 5px blue; }
 
 .questions-section__label {
+  order: 1;
   cursor: pointer; }
   .questions-section__label--consent {
     position: relative;
@@ -1487,6 +1500,8 @@ img {
     text-align: left; }
   .questions-section__container > p {
     margin-bottom: 25px; }
+  .questions-section__container > form {
+    justify-content: center; }
   .questions-section__fieldset {
     margin-bottom: 24px; }
   .questions-section__item {
@@ -1503,6 +1518,7 @@ img {
     width: 290px;
     margin-bottom: 23px; }
   .questions-section__label {
+    max-width: 320px;
     cursor: pointer; }
     .questions-section__label--consent {
       padding-left: 33px; }
@@ -1609,6 +1625,8 @@ img {
 
 .popup-call__item > .popup-call__input {
   width: 100%; }
+  .popup-call__item > .popup-call__input:focus::-webkit-input-placeholder {
+    color: #ffffff; }
 
 .popup-call__input-error {
   position: absolute;
@@ -1662,9 +1680,12 @@ img {
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat; }
+  .popup-call__checkbox:focus ~ .popup-call__label::after {
+    box-shadow: 0 0 5px blue; }
 
 .popup-call__label {
   width: 100%;
+  order: 1;
   cursor: pointer; }
   .popup-call__label--consent {
     position: relative;
@@ -1762,6 +1783,7 @@ img {
   text-transform: none;
   font-weight: 500;
   border: 2px solid transparent;
+  border-radius: 0;
   outline: none;
   transition: 0.25s ease all;
   background-color: rgba(255, 255, 255, 0.1);
