@@ -704,19 +704,9 @@ img {
     padding-bottom: 70px;
     background-image: url("../img/mobile-header-background.png");
     background-size: auto;
-    background-position: 55.5% 100%; } }
-  @media (max-width: 767px) and (min-resolution: 1.5dppx) {
-    .headband-container {
-      background-image: url("../img/mobile-header-background(x2).png");
-      background-size: 450%;
-      background-position: 55.5% 100%; } }
-
-@media (max-width: 767px) {
+    background-position: 55.5% 100%; }
     .headband-container--webp {
       background-image: url("../img/mobile-header-background.webp"); } }
-    @media (max-width: 767px) and (min-resolution: 1.5dppx) {
-      .headband-container--webp {
-        background-image: url("../img/mobile-header-background(x2).webp"); } }
 
 /* ----------------- Разметкdа под desktop ----------------- */
 .headline-section {
